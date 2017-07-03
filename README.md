@@ -44,7 +44,11 @@ You may want to consider running `sequelize seed:create` and create a new seed f
 
 ### Mockups you can optionally use
 
-
+![Homepage](https://github.com/rickmurdock/gabble/blob/master/mockups/homePage.png)
+![Sign Up](https://github.com/rickmurdock/gabble/blob/master/mockups/signUp.png)
+![Log in](https://github.com/rickmurdock/gabble/blob/master/mockups/logIn.png)
+![Create a new gab](https://github.com/rickmurdock/gabble/blob/master/mockups/createNew.png)
+![See list of likes](https://github.com/rickmurdock/gabble/blob/master/mockups/likesList.png)
 
 ### Links to documentation
 
