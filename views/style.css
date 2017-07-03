@@ -14,7 +14,8 @@
 
 h1 {
   color:blue;
-  padding: 10px;
+  padding: 20px;
+  font-size: 2em;
 }
 
 #menu {
@@ -27,3 +28,30 @@ h1 {
   padding: 10px;
   list-style-type: none;
 }
+
+label {
+  margin: 0 0 0 20px;
+}
+
+textarea,
+input[type="text"],
+input[type="password"] {
+  border: 1px solid black;
+  padding: 5px;
+  margin: 0 10px 10px 20px;
+}
+
+input[type=submit] {
+  padding: 5px;
+  margin: 0 10px 10px 20px;
+  color: white;
+  background-color: blue;
+}
+
+input[type=submit]:hover {
+  color: blue;
+  background-color: lightskyblue;
+  border: 1px solid blue;
+}
+
+

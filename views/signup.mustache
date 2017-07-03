@@ -15,7 +15,15 @@
         <li class="menuItem"><a href="signup">Sign up</a></li>
       </ul>
     </nav>
-
     <h1>Sign up</h1>
+    <form action="/signup" method="post">
+      <label for="username">Username</label><br>
+      <input type="text" name="username" value="" autofocus><br>
+      <label for="password1">Password</label><br>
+      <input type="password" name="password"><br>
+      <label for="passwordConfirm">Password Confirmation</label><br>
+      <input type="password" name="passwordConfirm"><br>
+      <input type="submit" name="signup" value="Sign up">
+    </form>
   </body>
 </html>
