@@ -43,3 +43,13 @@ This will require your knowledge of forms, validation, sessions, middleware, and
 You may want to consider running `sequelize seed:create` and create a new seed file that will create several users and gabs.
 
 ### Mockups you can optionally use
+
+
+
+### Links to documentation
+
+* [Express](https://expressjs.com/)
+* [body-parser](https://github.com/expressjs/body-parser)
+* [express-validator](https://github.com/ctavan/express-validator) and its underlying library, [node-validator](https://github.com/chriso/validator.js)
+* [express-session](https://github.com/expressjs/session)
+* [Sequelize](http://docs.sequelizejs.com/)
