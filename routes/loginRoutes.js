@@ -35,20 +35,6 @@ loginRouter.post("/", function(req, res) {
         return res.redirect("login");
       }
     });
-
-
-
-  // users.forEach(function(item) {
-  //   if (item.username === requestingUser.username) {
-  //     userRecord = item;
-  //   }
-  // });
-
-  // if (!userRecord) {
-  //   return res.redirect("/login");
-  // }
-
-
 });
 
 module.exports = loginRouter;

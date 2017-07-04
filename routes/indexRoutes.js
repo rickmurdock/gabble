@@ -1,20 +1,9 @@
-var express  = require('express');
-var indexRouter = express.Router();
+const express  = require('express');
+const indexRouter = express.Router();
+const shared = require('../public/sharedFunctions.js');
+const models = require("../models");
 
-// indexRouter.get("/", function(req, res) {
-//   res.render('index');
-// });
-
-function checkAuth(req, res, next) {
-  if (!req.session.user) {
-    return res.redirect("/login");
-  } else {
-    next();
-  }
-}
-
-// ROUTES
-indexRouter.get("/", checkAuth, function(req, res) {
+indexRouter.get("/", shared.checkAuth, function(req, res) {
   res.render("index", { user: req.session.user });
 });
 

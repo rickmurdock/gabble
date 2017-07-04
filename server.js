@@ -8,6 +8,7 @@ const port = process.env.PORT || 8000;
 const models = require("./models");
 const indexRouter = require('./routes/indexRoutes');
 const loginRouter = require('./routes/loginRoutes');
+const logoutRouter = require('./routes/logoutRoutes');
 const signupRouter = require('./routes/signupRoutes');
 const likesRouter = require('./routes/likesRoutes');
 const creategabRouter = require('./routes/creategabRoutes');
@@ -19,6 +20,8 @@ app.set("views", "./views");
 app.set("view engine", "mustache")
 
 //MIDDLEWARE
+// app.use('/', express.static('./public'));
+app.use(express.static('public'));
 app.use("/", express.static(__dirname + "/views"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -27,6 +30,7 @@ app.use(session(sessionConfig));
 // ROUTES
 app.use('/', indexRouter);
 app.use('/login', loginRouter);
+app.use('/logout', logoutRouter);
 app.use('/signup', signupRouter);
 app.use('/likes', likesRouter);
 app.use('/creategab', creategabRouter);
