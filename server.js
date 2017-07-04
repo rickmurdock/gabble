@@ -1,7 +1,9 @@
-const express = require("express");
+const express = require("express");;
 const expressValidator = require("express-validator");
 const bodyParser = require('body-parser');
 const mustacheExpress = require('mustache-express');
+const session = require("express-session");
+const sessionConfig = require("./sessionConfig")
 const port = process.env.PORT || 8000;
 const models = require("./models");
 const indexRouter = require('./routes/indexRoutes');
@@ -20,6 +22,7 @@ app.set("view engine", "mustache")
 app.use("/", express.static(__dirname + "/views"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(session(sessionConfig));
 
 // ROUTES
 app.use('/', indexRouter);

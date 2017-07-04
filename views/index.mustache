@@ -11,11 +11,13 @@
       <ul id="menu">
         <li class="menuItem"><a href="/">Gabble</a></li>
         <li class="menuItem"><a href="creategab">Create a new gab</a></li>
-        <li class="menuItem"><a href="login">Logged in as</a></li>
+        <li class="menuItem"><a href="login">Logged in as {{user.username}}</a></li>
         <li class="menuItem"><a href="">Log out</a></li>
       </ul>
     </nav>
 
     <h1>Homepage</h1>
+    <br>
+    <p>Welcome: {{user.displayName}}</p>
   </body>
 </html>

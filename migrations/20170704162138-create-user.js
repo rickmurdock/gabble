@@ -16,9 +16,9 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
-      diaplayname: {
+      displayname: {
         type: Sequelize.STRING,
-        allowNull: true
+        allowNull: false
       },
       createdAt: {
         allowNull: false,

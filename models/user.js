@@ -9,9 +9,9 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.STRING,
         allowNull: false
       },
-      diaplayname: {
+      displayname: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: false
       }
   }, {
     classMethods: {
