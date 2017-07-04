@@ -1,11 +1,15 @@
 const express = require("express");
-const expressValidator = require("express-validator")
+const expressValidator = require("express-validator");
 const bodyParser = require('body-parser');
 const mustacheExpress = require('mustache-express');
 const port = process.env.PORT || 8000;
-// const models = require("./models");
+const models = require("./models");
+const indexRouter = require('./routes/indexRoutes');
+const loginRouter = require('./routes/loginRoutes');
+const signupRouter = require('./routes/signupRoutes');
+const likesRouter = require('./routes/likesRoutes');
+const creategabRouter = require('./routes/creategabRoutes');
 const app = express();
-
 
 // RENDER ENGINE
 app.engine("mustache", mustacheExpress());
@@ -18,25 +22,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // ROUTES
-app.get("/", function(req, res) {
-  res.render('index');
-});
-
-app.get("/creategab", function(req, res) {
-  res.render('creategab');
-});
-
-app.get("/login", function(req, res) {
-  res.render('login');
-});
-
-app.get("/signup", function(req, res) {
-  res.render('signup');
-});
-
-app.get("/likes", function(req, res) {
-  res.render('likes');
-});
+app.use('/', indexRouter);
+app.use('/login', loginRouter);
+app.use('/signup', signupRouter);
+app.use('/likes', likesRouter);
+app.use('/creategab', creategabRouter);
 
 // LISTENER
 app.listen(port, function() {
