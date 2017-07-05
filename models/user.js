@@ -13,12 +13,12 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.STRING,
         allowNull: false
       }
-  }, {
-    classMethods: {
-      associate: function(models) {
-        // associations can be defined here
-      }
-    }
-  });
+  }, {});
+
+  user.associate = function(models) {
+    user.hasMany(models.message, { as: 'messages', foreignKey: 'authorId' });
+    user.hasMany(models.like, { as: 'likes', foreignKey: 'userId' });
+  };
+
   return user;
 };
