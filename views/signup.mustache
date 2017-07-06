@@ -18,13 +18,13 @@
     <h1>Sign up</h1>
     <form action="/signup" method="post">
       <label for="username">Username</label><br>
-      <input type="text" name="username" value="" autofocus><br>
+      <input type="text" name="username" value="" required autofocus><br>
       <label for="password1">Password</label><br>
-      <input type="password" name="password"><br>
+      <input type="password" name="password" required><br>
       <label for="passwordConfirm">Password Confirmation</label><br>
-      <input type="password" name="passwordConfirm"><br>
+      <input type="password" name="passwordConfirm" required><br>
       <label for="displayName">Display name</label><br>
-      <input type="text" name="displayName" value="" autofocus><br>
+      <input type="text" name="displayName" value="" required><br>
       <input type="submit" name="signup" value="Sign up">
     </form>
   </body>

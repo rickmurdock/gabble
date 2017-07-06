@@ -29,6 +29,7 @@ app.use(session(sessionConfig));
 
 // ROUTES
 app.use('/', indexRouter);
+app.use('/home', indexRouter);
 app.use('/login', loginRouter);
 app.use('/logout', logoutRouter);
 app.use('/signup', signupRouter);

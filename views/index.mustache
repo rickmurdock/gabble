@@ -15,12 +15,13 @@
         <li class="menuItem"><a href="logout">Log out</a></li>
       </ul>
     </nav>
-
-    <h1>Homepage</h1>
-
+    <h1>Messages</h1>
     {{#messages}}
       <p>
-        {{gab}}
+        <form action="/like/{{id}}" method="post">
+          <strong>{{author.displayname}}</strong>:  {{gab}}
+          <input type="submit" value="Like">
+        </form>
         <br>
         {{createdAt}} 
       </p>

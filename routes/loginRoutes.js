@@ -23,13 +23,12 @@ loginRouter.post("/", function(req, res) {
       }
     }).then(function (user) {
       if (user) {
-        console.log("USER is FOUND");
-        console.log("----", user.displayname);
         req.session.user = {
           username: user.username, 
-          displayName: user.displayname
+          displayName: user.displayname,
+          userId: user.id
         }
-        return res.render("index", { user : req.session.user});
+        res.redirect("/");
       } else {
         console.log("USER NOT FOUND");
         return res.redirect("login");

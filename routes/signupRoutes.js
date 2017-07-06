@@ -8,7 +8,7 @@ signupRouter.get("/", function(req, res) {
 
 signupRouter.post("/", function(req, res) {
   if (!req.body || !req.body.username || !req.body.password) {
-      res.redirect("/");
+      return res.redirect("/");
   }
 
   var newUser = models.user.build({

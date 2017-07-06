@@ -14,7 +14,7 @@ creategabRouter.post("/", function(req, res) {
 
   var newGab = models.message.build({
     gab : req.body.newgab,
-    authorId : 1
+    authorId : req.session.user.userId
   });
   newGab
     .save()
