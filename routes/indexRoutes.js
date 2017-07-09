@@ -9,11 +9,20 @@ indexRouter.get("/", shared.checkAuth, function(req, res) {
       include: [
         {
           model: models.user,
-          as: 'author'
+          as: "author"
+        },
+        {
+          model: models.like,
+          as: "likes",
+          include: { 
+            model: models.user,
+            as: "user"
+          }
         }
       ]
     })
-    .then(function(foundMessages) {     
+    .then(function(foundMessages) {   
+      console.log(foundMessages);  
     res.render("index", { messages: foundMessages,
                           user: req.session.user });
   })

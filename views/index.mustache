@@ -17,15 +17,25 @@
     </nav>
     <h1>Messages</h1>
     {{#messages}}
+      <div class="message">
       <p>
         <form action="/like/{{id}}" method="post">
           <strong>{{author.displayname}}</strong>:  {{gab}}
           <input type="submit" value="Like">
         </form>
-        <br>
         {{createdAt}} 
+        <br>
+        {{#likes.length}}
+          <a href="/likes">{{likes.length}} likes</a>
+        {{/likes.length}}
+        
+        {{^likes.length}}
+          No likes yet.
+        {{/likes.length}}
+        <br>
       </p>
-      <br>
+      </div>
+      
       <br>
     {{/messages}}
   </body>

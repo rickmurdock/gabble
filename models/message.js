@@ -1,10 +1,11 @@
 'use strict';
+
 module.exports = function(sequelize, DataTypes) {
   var message = sequelize.define('message', {
     gab: {
-        type: DataTypes.STRING,
-        allowNull: false
-      }
+      type: DataTypes.STRING,
+      allowNull: false
+    },
   }, {});
 
   message.associate = function(models) {
