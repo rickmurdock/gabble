@@ -4,18 +4,30 @@
     <title>Likes</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="style.css" rel="stylesheet">
+    <link href="/style.css" rel="stylesheet">
   </head>
   <body>
     <nav>
       <ul id="menu">
         <li class="menuItem"><a href="/">Gabble</a></li>
-        <li class="menuItem"><a href="creategab">Create a new gab</a></li>
-        <li class="menuItem"><a href="login">Logged in as</a></li>
-        <li class="menuItem"><a href="">Log out</a></li>
+        <li class="menuItem"><a href="/creategab">Create a new gab</a></li>
+        <li class="menuItem">Logged in as {{user.displayName}}</li>
+        <li class="menuItem"><a href="/logout">Log out</a></li>
       </ul>
     </nav>
 
     <h1>Likes</h1>
+     {{#messages}}
+    <p>
+   
+      <strong>{{author.displayname}}</strong>:  {{gab}}
+    <br>
+    {{createdAt}} 
+    <br>
+    {{#likes}}
+      {{user.displayname}}<br>
+    {{/likes}}
+    </p>
+    {{/messages}}
   </body>
 </html>
