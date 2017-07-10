@@ -4,6 +4,7 @@
     <title>Likes</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="/style.css" rel="stylesheet">
   </head>
   <body>
@@ -19,14 +20,13 @@
     <h1>Likes</h1>
      {{#messages}}
     <p>
-   
       <strong>{{author.displayname}}</strong>:  {{gab}}
-    <br>
-    {{createdAt}} 
-    <br>
-    {{#likes}}
-      {{user.displayname}}<br>
-    {{/likes}}
+      <br>
+      {{createdAt}} 
+      <br>
+      {{#likes}}
+        {{user.displayname}}<br>
+      {{/likes}}
     </p>
     {{/messages}}
   </body>

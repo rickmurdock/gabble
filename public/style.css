@@ -12,24 +12,51 @@
   background: transparent;
 }
 
+body {
+  background-color: #e9ebee;
+}
+
 h1 {
-  color:blue;
+  font-family: 'Roboto', sans-serif;
+  color:olivedrab;
   padding: 20px;
   font-size: 2em;
+  text-align: center;
 }
 
 #menu {
   display: flex;
   flex-flow: row, nowrap;
+  justify-content: center;
+  width: 100%;
+  padding: 20px 0;
+  background-color: olivedrab;
+  color: white;
 }
 
 .menuItem {
-  color: blue;
-  padding: 10px;
+  font-family: 'Roboto', sans-serif;
+  color: blanchedalmond;
+  padding: 0 10px;
   list-style-type: none;
+  /*border-right: 1px solid #000000;*/
 }
 
+.menuItem a {
+  font-family: 'Roboto', sans-serif;
+  color: blanchedalmond;
+}
+
+li+li {
+  border-left: 1px solid blanchedalmond;
+}
+
+/*li:last { 
+  border-right: none
+}*/
+
 label {
+  font-family: 'Roboto', sans-serif;
   margin: 0 0 0 20px;
 }
 
@@ -42,10 +69,11 @@ input[type="password"] {
 }
 
 input[type=submit] {
-  padding: 5px;
+  padding: 10px;
   margin: 0 10px 10px 20px;
-  color: white;
-  background-color: blue;
+  color: blanchedalmond;
+  background-color: olivedrab;
+  border-radius: 5px;
 }
 
 input[type=submit]:hover {
@@ -59,3 +87,17 @@ input[type=submit]:hover {
   width: 50%;
 }
 
+
+#wrapper-login {
+  margin-top: 40px;
+  padding: 20px;
+  border: 2px solid olivedrab;
+  /*background-color: blanchedalmond;*/
+  border-radius: 5px;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
