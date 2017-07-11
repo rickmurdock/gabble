@@ -12,6 +12,7 @@ const logoutRouter = require('./routes/logoutRoutes');
 const signupRouter = require('./routes/signupRoutes');
 const likesRouter = require('./routes/likesRoutes');
 const creategabRouter = require('./routes/creategabRoutes');
+const mygabsRouter = require('./routes/mygabsRoutes');
 const app = express();
 
 // RENDER ENGINE
@@ -34,6 +35,7 @@ app.use('/login', loginRouter);
 app.use('/logout', logoutRouter);
 app.use('/signup', signupRouter);
 app.use('/likes', likesRouter);
+app.use('/mygabs', mygabsRouter);
 app.use('/creategab', creategabRouter);
 
 // LISTENER

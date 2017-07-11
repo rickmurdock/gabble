@@ -21,37 +21,14 @@ likesRouter.get("/:id", function(req, res) {
         }
       ]
     })
-
-    // .findOne({ 
-    //   where: {
-    //     id: req.params.id 
-    //   },
-    //   inclued: [
-    //     {
-    //       model: models.user,
-    //       as: "author"
-    //     },
-    //     {
-    //       model: models.like,
-    //       as: "likes",
-    //       include: { 
-    //         model: models.user,
-    //         as: "user"
-    //       }
-    //     }
-    //   ]
-    // })
-
-  .then(function(foundLikes) {
-    console.log(foundLikes);
-    res.render("likes", { messages: foundLikes,
-                          user: req.session.user });
-  })
-  .catch(function(err) {
-    res.status(500).send(err);
-  }); 
-  
-  // res.render('likes');
+    .then(function(foundLikes) {
+      console.log(foundLikes);
+      res.render("likes", { messages: foundLikes,
+                            user: req.session.user });
+    })
+    .catch(function(err) {
+      res.status(500).send(err);
+    }); 
 });
 
 module.exports = likesRouter;

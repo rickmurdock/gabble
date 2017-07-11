@@ -51,10 +51,6 @@ li+li {
   border-left: 1px solid blanchedalmond;
 }
 
-/*li:last { 
-  border-right: none
-}*/
-
 label {
   font-family: 'Roboto', sans-serif;
   margin: 0 0 0 20px;
@@ -77,22 +73,28 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-  color: blue;
-  background-color: lightskyblue;
+  color: blanchedalmond;
+  background-color: green;
   /*border: 1px solid blue;*/
 }
 
 .message {
-  border-bottom: 1px solid green;
+  background-color: white;
+  /*border-bottom: 1px solid green;*/
+  box-shadow: 2px 2px 2px #888888;
   width: 50%;
+  margin: 0 auto;
+  padding: 10px;
 }
 
-
-#wrapper-login {
+#wrapper-login,
+#wrapper-signup,
+#wrapper-create,
+#wrapper-likes {
   margin-top: 40px;
   padding: 20px;
-  border: 2px solid olivedrab;
-  /*background-color: blanchedalmond;*/
+  box-shadow: 3px 3px 3px #888888;
+  background-color: white;
   border-radius: 5px;
   width: 300px;
   margin-left: auto;
@@ -100,4 +102,29 @@ input[type=submit]:hover {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
+}
+
+.nav-bar {
+  position: fixed;
+  width: 100%;
+}
+
+#wrapper-homepage {
+  padding: 50px 0 40px;
+}
+
+.line-1 {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  width: 50vw;
+}
+
+.middle {
+  width: 10vw;
+}
+
+input[type=submit] .btn-like {
+  padding: 0px;
+  color: blue;
 }

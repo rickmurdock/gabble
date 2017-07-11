@@ -11,17 +11,20 @@
     <nav>
       <ul id="menu">
         <li class="menuItem"><a href="/">Gabble</a></li>
-        <li class="menuItem"><a href="creategab">Create a new gab</a></li>
+        <li class="menuItem"><a href="/mygabs">My Gabs</a></li>
+        <li class="menuItem">Create a new gab</li>
         <li class="menuItem">Logged in as {{user.displayName}}</li>
         <li class="menuItem"><a href="logout">Log out</a></li>
       </ul>
     </nav>
+    <div id="wrapper-create">
     <h1>Create a New Gab</h1>
     <br>
     <form action="/creategab" method="post">
-      <textarea name="newgab" id="newgab" cols="35" rows="4"></textarea>
+      <textarea name="newgab" id="newgab" maxlength="140" cols="35" rows="4"></textarea>
       <br>
       <input type="submit" name="savegab" value="Save a gab">
     </form>
+    </div>  
   </body>
 </html>

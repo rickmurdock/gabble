@@ -1,11 +1,13 @@
 const express  = require('express');
-const indexRouter = express.Router();
+const mygabsRouter = express.Router();
 const shared = require('../public/sharedFunctions.js');
 const models = require("../models");
 
-indexRouter.get("/", shared.checkAuth, function(req, res) {
+mygabsRouter.get("/", shared.checkAuth, function(req, res) {
   models.message
-    .findAll({
+    // .findAll({
+    .findAll({ 
+      where: { authorId: req.session.user.userId },
       include: [
         {
           model: models.user,
@@ -23,7 +25,7 @@ indexRouter.get("/", shared.checkAuth, function(req, res) {
     })
     .then(function(foundMessages) {   
       console.log(foundMessages);  
-    res.render("index", { messages: foundMessages,
+    res.render("mygabs", { messages: foundMessages,
                           user: req.session.user });
     })
     .catch(function(err) {
@@ -31,19 +33,4 @@ indexRouter.get("/", shared.checkAuth, function(req, res) {
     }); 
 });
 
-indexRouter.post("/like/:id", function(req, res) {
-  var newLike = models.like.build({
-    messageId : req.params.id,
-    userId : req.session.user.userId
-  })
-  newLike
-    .save()
-    .then(function(savedLike) {
-      res.redirect("/");
-    })
-    .catch(function(err) {
-      res.status(500).send(err);
-    });
-});
-
-module.exports = indexRouter;
+module.exports = mygabsRouter;

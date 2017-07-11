@@ -11,23 +11,26 @@
     <nav>
       <ul id="menu">
         <li class="menuItem"><a href="/">Gabble</a></li>
+        <li class="menuItem"><a href="/mygabs">My Gabs</a></li>
         <li class="menuItem"><a href="/creategab">Create a new gab</a></li>
         <li class="menuItem">Logged in as {{user.displayName}}</li>
         <li class="menuItem"><a href="/logout">Log out</a></li>
       </ul>
     </nav>
-
-    <h1>Likes</h1>
-     {{#messages}}
-    <p>
-      <strong>{{author.displayname}}</strong>:  {{gab}}
-      <br>
-      {{createdAt}} 
-      <br>
-      {{#likes}}
-        {{user.displayname}}<br>
-      {{/likes}}
-    </p>
-    {{/messages}}
+    <div id="wrapper-likes">
+      
+      {{#messages}}
+      <p>
+        <strong>{{author.displayname}}</strong>:  {{gab}}
+        <br>
+        {{createdAt}} 
+        <br>
+        <h1>Liked by</h1>
+        {{#likes}}
+          {{user.displayname}}<br>
+        {{/likes}}
+      </p>
+      {{/messages}}
+    </div>
   </body>
 </html>
