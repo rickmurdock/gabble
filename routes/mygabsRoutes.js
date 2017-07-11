@@ -5,7 +5,6 @@ const models = require("../models");
 
 mygabsRouter.get("/", shared.checkAuth, function(req, res) {
   models.message
-    // .findAll({
     .findAll({ 
       where: { authorId: req.session.user.userId },
       include: [
@@ -32,5 +31,19 @@ mygabsRouter.get("/", shared.checkAuth, function(req, res) {
       res.status(500).send(err);
     }); 
 });
+
+mygabsRouter.post("/", shared.checkAuth, function(req, res) {
+  console.log("EMPTY POST ====== ", req.params.id);
+  res.send("empty post")
+});
+
+// mygabsRouter.post("/:id"), shared.checkAuth, function(req, res) {
+//   console.log("GEEEEET ID ====== ", req.params.id);
+// };
+
+// mygabsRouter.post("/delete/:id"), shared.checkAuth, function(req, res) {
+//   console.log("DELETE POST ID ====== ", req.params.id);
+// };
+
 
 module.exports = mygabsRouter;

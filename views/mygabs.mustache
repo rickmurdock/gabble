@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Homepage</title>
+    <title>My Gabs</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
+    <link href="/style.css" rel="stylesheet">
   </head>
   <body>
     <nav class="nav-bar">
@@ -22,11 +22,12 @@
     {{#messages}}
       <div class="message">
       <p>
-        <form action="/like/{{id}}" method="post">
+        <!--<form action="/mygabs/delete/{{id}}" method="post">-->
+        <form action="/mygabs" method="post">
         <div class="line-1">
           <span class="middle"><strong>{{author.displayname}}</strong>: </span>
           <span>{{gab}}</span>
-          <input type="submit" class="btn-like" value="Like">
+          <input type="submit" class="btn-like" value="Delete">
         </div>
         </form>
         {{createdAt}} 

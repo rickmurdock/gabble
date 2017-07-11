@@ -21,9 +21,9 @@ app.set("views", "./views");
 app.set("view engine", "mustache")
 
 //MIDDLEWARE
-// app.use('/', express.static('./public'));
 app.use(express.static('public'));
-app.use("/", express.static(__dirname + "/views"));
+// app.use("/", express.static(__dirname + "/views"));
+app.use(express.static("views"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(session(sessionConfig));
@@ -40,5 +40,5 @@ app.use('/creategab', creategabRouter);
 
 // LISTENER
 app.listen(port, function() {
-  console.log('Babble server is running on port: ', port);
+  console.log('Gabble server is running on port: ', port);
 });
