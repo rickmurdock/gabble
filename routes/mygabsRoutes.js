@@ -32,18 +32,27 @@ mygabsRouter.get("/", shared.checkAuth, function(req, res) {
     }); 
 });
 
-mygabsRouter.post("/", shared.checkAuth, function(req, res) {
-  console.log("EMPTY POST ====== ", req.params.id);
-  res.send("empty post")
+mygabsRouter.post("/:id", shared.checkAuth, function(req, res) {
+  models.like
+    .destroy({
+      where: {
+        messageId: req.params.id
+      }
+    })
+    .then(function() {
+      models.message
+        .destroy({
+          where: {
+            id: req.params.id
+          }
+        })
+    })
+    .then(function() {
+      res.redirect("/mygabs");
+    })
+    .catch(function(err) {
+      res.status(500).send(err);
+    }); 
 });
-
-// mygabsRouter.post("/:id"), shared.checkAuth, function(req, res) {
-//   console.log("GEEEEET ID ====== ", req.params.id);
-// };
-
-// mygabsRouter.post("/delete/:id"), shared.checkAuth, function(req, res) {
-//   console.log("DELETE POST ID ====== ", req.params.id);
-// };
-
 
 module.exports = mygabsRouter;
