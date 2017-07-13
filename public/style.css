@@ -117,11 +117,12 @@ input[type=submit]:hover {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  width: 50vw;
+  /*width: 50vw;*/
+  width: 100%;
 }
 
 .middle {
-  width: 10vw;
+  width: 75%;
 }
 
 input[type=submit] .btn-like {

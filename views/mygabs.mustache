@@ -21,27 +21,25 @@
     <h1>My Gabs</h1>
     {{#messages}}
       <div class="message">
-      <p>
-        <!--<form action="/mygabs/delete/{{id}}" method="post">-->
-        <form action="/mygabs/{{id}}" method="post">
-        <div class="line-1">
-          <span class="middle"><strong>{{author.displayname}}</strong>: </span>
-          <span>{{gab}}</span>
-          <input type="submit" class="btn-like" value="Delete">
-        </div>
-        </form>
-        {{createdAt}} 
-        <br>
-        {{#likes.length}}
-          <a href="/likes/{{id}}">{{likes.length}} likes</a>
-        {{/likes.length}}
-        {{^likes.length}}
-          No likes yet.
-        {{/likes.length}}
-        <br>
-      </p>
+        <p>
+          <form action="/mygabs/{{id}}" method="post">
+            <div class="line-1">
+              <span><strong>{{author.displayname}}</strong>: </span>
+              <span class="middle">{{gab}}</span>
+              <input type="submit" class="btn-like" value="Delete">
+            </div>
+          </form>
+          {{createdAt}} 
+          <br>
+          {{#likes.length}}
+            <a href="/likes/{{id}}">{{likes.length}} likes</a>
+          {{/likes.length}}
+          {{^likes.length}}
+            No likes yet.
+          {{/likes.length}}
+          <br>
+        </p>
       </div>
-      
       <br>
     {{/messages}}
     </div>
