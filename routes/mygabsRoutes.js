@@ -7,6 +7,7 @@ mygabsRouter.get("/", shared.checkAuth, function(req, res) {
   models.message
     .findAll({ 
       where: { authorId: req.session.user.userId },
+      order: [[ "createdAt", "DESC"]],
       include: [
         {
           model: models.user,

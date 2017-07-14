@@ -6,6 +6,7 @@ const models = require("../models");
 indexRouter.get("/", shared.checkAuth, function(req, res) {
   models.message
     .findAll({
+      order: [[ "createdAt", "DESC"]],
       include: [
         {
           model: models.user,

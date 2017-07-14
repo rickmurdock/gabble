@@ -26,6 +26,7 @@ app.use(express.static('public'));
 app.use(express.static("views"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(expressValidator());
 app.use(session(sessionConfig));
 
 // ROUTES
