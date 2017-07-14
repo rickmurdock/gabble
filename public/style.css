@@ -39,7 +39,6 @@ h1 {
   color: blanchedalmond;
   padding: 0 10px;
   list-style-type: none;
-  /*border-right: 1px solid #000000;*/
 }
 
 .menuItem a {
@@ -75,13 +74,11 @@ input[type=submit] {
 input[type=submit]:hover {
   color: blanchedalmond;
   background-color: green;
-  /*border: 1px solid blue;*/
 }
 
 .message {
   font-family: 'Roboto', sans-serif;
   background-color: white;
-  /*border-bottom: 1px solid green;*/
   box-shadow: 2px 2px 2px #888888;
   width: 50%;
   margin: 0 auto;
@@ -90,8 +87,8 @@ input[type=submit]:hover {
 
 #wrapper-login,
 #wrapper-signup,
-#wrapper-create,
-#wrapper-likes {
+#wrapper-create
+ {
   margin-top: 40px;
   padding: 20px;
   box-shadow: 3px 3px 3px #888888;
@@ -105,11 +102,15 @@ input[type=submit]:hover {
   justify-content: center;
 }
 
+#wrapper-create {
+  width: 500px;
+}
+
 .nav-bar {
   position: fixed;
   width: 100%;
 }
-
+#wrapper-likes,
 #wrapper-homepage {
   padding: 50px 0 40px;
 }
@@ -118,7 +119,6 @@ input[type=submit]:hover {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  /*width: 50vw;*/
   width: 100%;
 }
 

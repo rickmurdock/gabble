@@ -22,7 +22,6 @@ app.set("view engine", "mustache")
 
 //MIDDLEWARE
 app.use(express.static('public'));
-// app.use("/", express.static(__dirname + "/views"));
 app.use(express.static("views"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

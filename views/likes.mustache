@@ -18,18 +18,19 @@
       </ul>
     </nav>
     <div id="wrapper-likes">
-      
       {{#messages}}
-      <p>
-        <strong>{{author.displayname}}</strong>:  {{gab}}
-        <br>
-        {{createdAt}} 
-        <br>
-        <h1>Liked by</h1>
-        {{#likes}}
-          {{user.displayname}}<br>
-        {{/likes}}
-      </p>
+      <div class="message">
+        <p>
+          <strong>{{author.displayname}}</strong>:  {{gab}}
+          <br><br>
+          {{createdAt}} 
+          <br>
+          <h1>Liked by</h1>
+          {{#likes}}
+            {{user.displayname}}<br>
+          {{/likes}}
+        </p>
+        </div>
       {{/messages}}
     </div>
   </body>
